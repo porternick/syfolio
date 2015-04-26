@@ -1,26 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Syfolio</title>
+  <head>
+    <title>Syfolio</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-</head>
-<body>
-  <%= render 'layouts/header' %>
-    <div id="columns">
-    <div id="side">
-      <ul>
-        <li><a href="home">Home</a></li>
-        <li><a href="about">About</a></li>
-        <li><a href="contact">Contact</a></li>
-      </ul>
-    </div>
-    <div id="main">
-      <%= yield %>
-    </div>
-  </div>
-  <%= render 'layouts/header' %>
-
-</body>
+  </head>
+  <body>
+    <%= render 'layouts/header' %>
+      <div class="container">
+        <%= yield %>
+        <%= render 'layouts/footer' %>
+      </div>
+  </body>
 </html>
