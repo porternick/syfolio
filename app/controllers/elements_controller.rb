@@ -1,6 +1,6 @@
 class ElementsController < ApplicationController
   before_action :set_element, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /elements
   # GET /elements.json
   def index
@@ -14,7 +14,7 @@ class ElementsController < ApplicationController
 
   # GET /elements/new
   def new
-    @element = Element.new
+    @element = current_user.elements.build
   end
 
   # GET /elements/1/edit
@@ -24,7 +24,7 @@ class ElementsController < ApplicationController
   # POST /elements
   # POST /elements.json
   def create
-    @element = Element.new(element_params)
+    @element = current_user.elements.build(element_params)
 
     respond_to do |format|
       if @element.save
