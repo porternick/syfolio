@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Elements</h1>
+<% @user = current_user %>
+<h1><%= @user.email %></h1>
+
+<br>
 
 <table>
   <thead>
@@ -15,7 +18,7 @@
   </thead>
 
   <tbody>
-    <% @elements.each do |element| %>
+    <% @user.elements.each do |element| %>
       <tr>
         <td><%= element.title %></td>
         <td><%= element.evidence %></td>
@@ -23,12 +26,11 @@
         <td><%= element.description %></td>
         <td><%= element.user_id %></td>
         <td><%= link_to 'Show', element %></td>
-        <% if element.user == current_user %>
-          <td><%= link_to 'Edit', edit_element_path(element) %></td>
-          <td><%= link_to 'Destroy', element, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
+        <td><%= link_to 'Edit', edit_element_path(element) %></td>
+        <td><%= link_to 'Destroy', element, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+    
   </tbody>
 </table>
 
