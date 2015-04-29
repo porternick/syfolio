@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= current_user.email %></h1>
+<% if user_signed_in? %>
+  <h1><%= current_user.email %></h1>
+<% else %>
+  <h1><%= @user.email %></h1>
+<% end %>
+
 
 <br>
 
@@ -25,8 +30,10 @@
         <td><%= element.description %></td>
         <td><%= element.user_id %></td>
         <td><%= link_to 'Show', element %></td>
-        <td><%= link_to 'Edit', edit_element_path(element) %></td>
-        <td><%= link_to 'Destroy', element, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if element.user == current_user %>
+          <td><%= link_to 'Edit', edit_element_path(element) %></td>
+          <td><%= link_to 'Destroy', element, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
     
