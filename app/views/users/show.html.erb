@@ -22,7 +22,7 @@
   </thead>
 
   <tbody>
-    <% current_user.elements.each do |element| %>
+    <% @user.elements.each do |element| %>
       <tr>
         <td><%= element.title %></td>
         <td><%= element.evidence %></td>
