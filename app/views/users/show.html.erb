@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<% @user = current_user %>
-<h1><%= @user.email %></h1>
+<h1><%= current_user.email %></h1>
 
 <br>
 
@@ -18,7 +17,7 @@
   </thead>
 
   <tbody>
-    <% @user.elements.each do |element| %>
+    <% current_user.elements.each do |element| %>
       <tr>
         <td><%= element.title %></td>
         <td><%= element.evidence %></td>
