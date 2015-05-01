@@ -10,4 +10,14 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(resource)
     root_path
   end
+  
+  before_filter :configure_devise_parameters, if: :devise_controller?
+
+  protected
+    def configure_devise_parameters
+      devise_parameter_sanitizer.for(:account_update) << :name
+      devise_parameter_sanitizer.for(:account_update) << :username
+      devise_parameter_sanitizer.for(:sign_up) << :name
+      devise_parameter_sanitizer.for(:sign_up) << :username
+    end
 end

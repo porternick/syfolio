@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <% if user_signed_in? && current_user == @user %>
-  <h1><%= current_user.email %></h1>
+  <h1><%= current_user.name %></h1>
 <% else %>
-  <h1><%= @user.email %></h1>
+  <h1><%= @user.name %></h1>
 <% end %>
 
 
