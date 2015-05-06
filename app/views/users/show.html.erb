@@ -7,28 +7,28 @@
 <% end %>
 
 <br>
-<!-- Projects Row -->
-<div class="row">
-  <% @user.elements.each do |element| %>
-    <div class="col-md-6 portfolio-item">
-      <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-      <p><%= element.evidence %></p>
-      <h3>
-        <%= element.title %>
-      </h3>
-      <h5>
-        (<%= element.standard %>)
-      </h5>
-      <p><%= element.description %></p>
-      <%= link_to 'Show', element %>
-      <% if element.user == current_user %>
-        <%= link_to 'Edit', edit_element_path(element) %>
-        <%= link_to 'Destroy', element, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-    </div>
-  <% end %>
-</div>
-<!-- /.row -->
+
+<% @user.elements.in_groups_of(2, false) do |elements| %>
+  <!-- Projects Row -->
+  <div class="row">
+    <% elements.each do |element| %>
+      <div class="col-md-6 portfolio-item">
+        <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+        <p><%= element.evidence %></p>
+        <h3><%= element.title %></h3>
+        <h5>(<%= element.standard %>)</h5>
+        <p><%= element.description %></p>
+        <%= link_to 'Show', element %>
+        <% if element.user == current_user %>
+          <%= link_to 'Edit', edit_element_path(element) %>
+          <%= link_to 'Destroy', element, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <!-- /.row -->
+  <br>
+<% end %>
 
 <br>
 <%= link_to 'New Element', new_element_path %>
