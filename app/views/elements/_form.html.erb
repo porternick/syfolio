@@ -11,23 +11,33 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <div class="row">
+    <div class="col-md-7">
+      <a href="#">
+        <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+      </a>
+    </div>
+    <div class="col-md-5">
+      <div class="field">
+        <%= f.label :title %><br>
+        <%= f.text_field :title, :placeholder => "What was the title of the project or assignment?" %>
+      </div>
+      <div class="field">
+        <%= f.label :evidence %><br>
+        <%= f.text_field :evidence, :placeholder => "Upload evidence" %>
+      </div>
+      <div class="field">
+        <%= f.label :standard %><br>
+        <%= f.select(:standard, Element.standards) %>
+      </div>
+      <div class="field">
+        <%= f.label :description %><br>
+        <%= f.text_area :description, :placeholder => "Use 200 words or less to explain how this project demonstrates masery of the standard." %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :evidence %><br>
-    <%= f.text_field :evidence %>
-  </div>
-  <div class="field">
-    <%= f.label :standard %><br>
-    <%= f.text_field :standard %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>
