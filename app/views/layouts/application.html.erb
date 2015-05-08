@@ -9,16 +9,9 @@
   </head>
   <% if params[:controller] == "pages" %>
     <body class="controller-<%= params[:controller] %>">
-      <%= render 'layouts/header' %>
-      <div class="container">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-        <%= yield %>
-      </div>
-      <%= render 'layouts/footer' %>
-    </body
   <% else %>
     <body>
+  <% end %>
       <%= render 'layouts/header' %>
       <div class="container">
         <p class="notice"><%= notice %></p>
@@ -27,5 +20,4 @@
       </div>
       <%= render 'layouts/footer' %>
     </body>
-  <% end %>
 </html>
