@@ -12,12 +12,17 @@
   <% else %>
     <body>
   <% end %>
-      <%= render 'layouts/header' %>
-      <div class="container">
+    <div id="notice_wrapper">
+      <% if notice %>
         <p class="notice"><%= notice %></p>
+      <% elsif alert %>
         <p class="alert"><%= alert %></p>
-        <%= yield %>
-      </div>
-      <%= render 'layouts/footer' %>
+      <% end %>
+    </div>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>      
     </body>
 </html>

@@ -30,6 +30,22 @@ textarea {
   resize: vertical;
 }
 
+#notice_wrapper {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  background-color: rgba(49, 239, 125, 0.85);
+  .alert, .notice {
+    padding: 11px;
+    margin: 0;
+    color: white;
+    font-size: large;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+}
+
 .jumbotron {
   text-align: center;
 }
