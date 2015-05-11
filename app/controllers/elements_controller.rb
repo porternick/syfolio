@@ -10,6 +10,7 @@ class ElementsController < ApplicationController
 
   # GET /elements/1
   # GET /elements/1.json
+
   def show
   end
 

@@ -1,24 +1,32 @@
-<p id="notice"><%= notice %></p>
+<% if user_signed_in? && current_user == @user %>
+  <h1><%= current_user.name %></h1>
+<% else %>
+  <h1><%= @element.user.name %></h1>
+<% end %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @element.title %>
-</p>
+<br>
 
-<p>
-  <strong>Evidence:</strong>
-  <%= @element.evidence %>
-</p>
+<div class="row">
+  <div class="col-md-7">
+    <a href="#">
+      <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+    </a>
+  </div>
+  <div class="col-md-5">
+    <p><strong>Title</strong></p>
+    <p><%= @element.title %></p>
 
-<p>
-  <strong>Standard:</strong>
-  <%= @element.standard %>
-</p>
+    <p><strong>Evidence</strong></p>
+    <p><%= @element.evidence %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @element.description %>
-</p>
+    <p><strong>Standard</strong></p>
+    <p><%= @element.standard %></p>
+
+    <p><strong>Description</strong></p>
+    <p><%= @element.description %></p>
+
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_element_path(@element) %> |
 <%= link_to 'Back', elements_path %>
