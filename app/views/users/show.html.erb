@@ -1,8 +1,11 @@
-<% if user_signed_in? && current_user == @user %>
+<div class="jumbotron">
+  <%= image_tag @user.avatar.url(:medium) %>
+  <% if user_signed_in? && current_user == @user %>
   <h1><%= current_user.name %></h1>
-<% else %>
+  <% else %>
   <h1><%= @user.name %></h1>
-<% end %>
+  <% end %>
+</div>
 
 <br>
 
@@ -11,9 +14,8 @@
   <div class="row">
     <% elements.each do |element| %>
       <div class="col-md-6 portfolio-item">
-        <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-        <p><%= element.evidence %></p>
         <h3><%= element.title %></h3>
+        <img class="img-responsive" src="http://placehold.it/700x400" alt="<%= element.evidence %>" title="<%= element.evidence %>">
         <h5>(<%= element.standard %>)</h5>
         <p><%= element.description %></p>
         <%= link_to 'Show', element %>
