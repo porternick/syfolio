@@ -1,13 +1,11 @@
-<div class="jumbotron">
-  <%= image_tag @user.avatar.url(:medium) %>
-  <% if user_signed_in? && current_user == @user %>
-  <h1><%= current_user.name %></h1>
-  <% else %>
-  <h1><%= @user.name %></h1>
-  <% end %>
-</div>
+<h1><%= image_tag(@user.avatar.url(:medium), :class => "img-circle" ) %>
+<% if user_signed_in? && current_user == @user %>
+  <%= current_user.name %></h1>
+<% else %>
+  <%= @user.name %></h1>
+<% end %>
 
-<br>
+<hr>
 
 <% @user.elements.in_groups_of(2, false) do |elements| %>
   <!-- Projects Row -->
