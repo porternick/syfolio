@@ -7,6 +7,11 @@
 
 <hr>
 
+<% if @user.elements.blank? && user_signed_in? && current_user == @user %>
+  <h3>There is nothing here yet!</h3>
+  <h2>What are you going to do about it?</h2>
+<% end %>
+
 <% @user.elements.in_groups_of(2, false) do |elements| %>
   <!-- Projects Row -->
   <div class="row">
@@ -29,4 +34,7 @@
 <% end %>
 
 <br>
-<%= link_to 'New Element', new_element_path %>
+
+<% if user_signed_in? && current_user == @user %>
+  <p class="center"><%= link_to 'New Element', new_element_path, class: "btn btn-lg btn-success" %></p>
+<% end %>
