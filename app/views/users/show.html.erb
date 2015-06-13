@@ -18,7 +18,7 @@
     <% elements.each do |element| %>
       <div class="col-md-6 portfolio-item">
         <h3><%= element.title %></h3>
-        <img class="img-responsive" src="http://placehold.it/700x400" alt="<%= element.evidence %>" title="<%= element.evidence %>">
+        <p><%= image_tag(element.evidence.url(:large), :class => "img-responsive-center")%></p>
         <h5>(<%= element.standard %>)</h5>
         <p><%= element.description %></p>
         <%= link_to 'Show', element %>

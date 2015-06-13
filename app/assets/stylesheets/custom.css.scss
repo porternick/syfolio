@@ -70,6 +70,12 @@ textarea {
   font-color: #777777;
 }
 
+.img-responsive-center{
+  display: block;
+  max-width: 100%;
+  height: auto;
+  text-align: center;
+}
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {

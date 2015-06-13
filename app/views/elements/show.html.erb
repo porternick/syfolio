@@ -9,16 +9,11 @@
 
 <div class="row">
   <div class="col-md-7">
-    <a href="#">
-      <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-    </a>
+    <p><%= image_tag(@element.evidence.url(:large), :class => "img-responsive-center")%></p>
   </div>
   <div class="col-md-5">
     <p><strong>Title</strong></p>
     <p><%= @element.title %></p>
-
-    <p><strong>Evidence</strong></p>
-    <p><%= @element.evidence %></p>
 
     <p><strong>Standard</strong></p>
     <p><%= @element.standard %></p>

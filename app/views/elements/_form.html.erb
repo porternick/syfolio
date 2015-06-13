@@ -1,4 +1,4 @@
-<%= form_for(@element) do |f| %>
+<%= form_for @element, :html => { :multipart => true } do |f| %>
   <% if @element.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@element.errors.count, "error") %> prohibited this element from being saved:</h2>
@@ -13,9 +13,7 @@
 
   <div class="row">
     <div class="col-md-7">
-      <a href="#">
-        <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-      </a>
+      <p><%= image_tag(@element.evidence.url(:large), :class => "img-responsive-center")%></p>
     </div>
     <div class="col-md-5">
       <div class="field">
@@ -24,7 +22,7 @@
       </div>
       <div class="field">
         <%= f.label :evidence %><br>
-        <%= f.text_field :evidence, :placeholder => "Upload evidence" %>
+        <%= f.file_field :evidence %>
       </div>
       <div class="field">
         <%= f.label :standard %><br>
