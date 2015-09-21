@@ -5,4 +5,4 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Element.create(title: 'Space Museum', evidence: 'image.jpg', standard: '1.2.3.4', description: 'community event', user_id: '1')
+Element.create(title: 'Space Museum', standard: '1.2.3.4', description: 'community event', user_id: '1')

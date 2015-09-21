@@ -2,12 +2,10 @@
 
 one:
   title: MyString
-  evidence: MyString
   standard: MyString
   description: MyText
 
 two:
   title: MyString
-  evidence: MyString
   standard: MyString
   description: MyText
